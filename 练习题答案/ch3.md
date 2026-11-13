@@ -199,3 +199,7 @@ long test(long x, long y) {
     return val;
 }
 ```
+
+#### 3.22
+A. 13  
+B. 20
