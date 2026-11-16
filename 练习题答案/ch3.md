@@ -220,3 +220,15 @@ dw_loop:
     testq %rdx, %rdx // test n with 0
     jp .L2 // n > 0 continue
 ```
+
+#### 3.24
+```c
+long loop_while(long a, long b) {
+    long result = 1;
+    while (a < b) {
+        result = result * (a+b);
+        a = a + 1;
+    }
+    return result;
+}
+```
