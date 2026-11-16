@@ -232,3 +232,30 @@ long loop_while(long a, long b) {
     return result;
 }
 ```
+
+#### 3.25
+```c
+long loop_while2(long a, long b) {
+    long result = b;
+    while (a > 0 && b > 0) {
+        result = result * a;
+        b = b - a;
+    }
+    return result;
+}
+```
+
+#### 3.26
+A. jump to middle  
+B.
+```c
+long fun_a(unsigned long x) {
+    long val = 0;
+    while (x != 0) {
+        val = val ^ x;
+        x = x >> 1;
+    }
+    return val & 1;
+}
+```
+C. 判断x的奇偶性
