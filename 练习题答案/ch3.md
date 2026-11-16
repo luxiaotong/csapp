@@ -203,3 +203,20 @@ long test(long x, long y) {
 #### 3.22
 A. 13  
 B. 20
+
+#### 3.23
+A. %rax存x,%rcx存y,%rdx存n  
+B. 使用leaq  
+C. 
+```asm
+dw_loop:
+    movq %rdi, %rax // %rax = x
+    movq %rdi, %rcx
+    imulq %rsi, %rcx // y = x*x
+    leaq (%rdi,%rdi), %rdx // n = 2*x
+.L2:
+    leaq 1(%rcx, %rax), %rax // x += y; (*p)++
+    subq $1, %rdx // n--
+    testq %rdx, %rdx // test n with 0
+    jp .L2 // n > 0 continue
+```
