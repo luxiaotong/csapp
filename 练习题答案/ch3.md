@@ -259,3 +259,45 @@ long fun_a(unsigned long x) {
 }
 ```
 C. 判断x的奇偶性
+
+#### 3.27
+```c
+long fact_for_while(long n) {
+    long i = 2;
+    long result = 1;
+    while (i<=n) {
+        result *= i;
+        i++;
+    }
+    return result;
+}
+long fact_for_guarded_do(long n) {
+    long i = 2;
+    long result = 1;
+    if (i > n)
+        goto done;
+loop:
+    result *= i;
+    i++;
+    if (i <= n)
+        goto loop;
+done:
+    return result;
+}
+```
+
+#### 3.28
+A.
+```c
+long fun_b(unsigned long x) {
+    long val = 0;
+    int i;
+    for(i = 64; i != 0; i--) {
+        val = (val*2) | (x&1);
+        x = x >> 1;
+    }
+    return val;
+}
+```
+B. 不需要初始测试，初始i=64满足首次循环的条件。  
+C. x的位按倒序存储在val中。
