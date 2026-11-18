@@ -306,3 +306,30 @@ C. x的位按倒序存储在val中。
 A. 死循环  
 B. 增加i++，避免goto跳过i++,导致死循环。
 
+#### 3.30
+A. -1, 0, 1, 2, 4, 5, 7  
+B. (0, 7), (2, 4)
+
+#### 3.31
+```c
+void switcher(long a, long b, long c, long *dest) {
+    long val;
+    switch (a) {
+    case 5:
+        c = b^15;
+    case 0:
+        val = c+112;
+        break;
+    case 2:
+    case 7:
+        val = (b+c)*4;
+        break;
+    case 4:
+        val = a;
+        break;
+    default:
+        val = b;
+    }
+    *dest = val;
+}
+```
