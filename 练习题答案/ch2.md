@@ -241,3 +241,8 @@ B. func1执行逻辑右移，func2执行算术右移
 #### 2.25
 无符号0-1溢出了。  
 第5行增加：if(length==0) return result;
+
+#### 2.26
+A. strlen(s) < strlen(t)  
+B. 无符号减法结果是正的  
+C. return strlen(s)>strlen(t);
