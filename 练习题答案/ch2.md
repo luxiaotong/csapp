@@ -78,3 +78,8 @@ B. 蓝绿，绿，蓝
 |第一步|a|a^b|
 |第二步|b|a^b|
 |第三步|b|a|
+
+#### 2.11
+A. first = last = k  
+B. (&a[first])^(&a[last])=0  
+C. 循环终止条件改为first<last
