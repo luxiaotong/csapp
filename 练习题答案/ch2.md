@@ -246,3 +246,6 @@ B. func1执行逻辑右移，func2执行算术右移
 A. strlen(s) < strlen(t)  
 B. 无符号减法结果是正的  
 C. return strlen(s)>strlen(t);
+
+#### 2.27
+return (x+y)>x;
