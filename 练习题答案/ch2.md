@@ -83,3 +83,8 @@ B. 蓝绿，绿，蓝
 A. first = last = k  
 B. (&a[first])^(&a[last])=0  
 C. 循环终止条件改为first<last
+
+#### 2.12
+A. x & 0xFF  
+B. (x & 0xFF) | (~x&~0xFF), or x ^ ~0xFF  
+C.x | 0xFF
