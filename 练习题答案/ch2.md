@@ -276,3 +276,19 @@ return !(x>0&&y>0&&(x+y)<=0 ||x<0&&y<0&&(x+y)>=0);
 
 #### 2.31
 因为溢出后，计算结果还是相等的。补码加法形成阿贝尔群。
+
+#### 2.32
+$y=T_{min}$错误，因为$-T_{min}=T_{min}<0$,当x<0时，tadd_ok(x, -y)返回0溢出。但实际上$x-T_{min}$不会溢出。
+```c
+#include"stdio.h"
+#include"limits.h"
+int main()
+{
+    char x = -1;
+    char y = CHAR_MIN;
+    printf("%d, %d\n", x, y);
+    char res = x-y;
+    printf("res=%d\n", res); // res=127
+    return 0;
+}
+```
